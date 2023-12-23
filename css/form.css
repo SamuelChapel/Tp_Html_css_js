@@ -1,0 +1,67 @@
+body {
+  font-family: Calibri, serif;
+}
+body #form {
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 20px;
+  display: grid;
+  grid: repeat(3, 1fr)/repeat(2, 1fr);
+  gap: 30px;
+  background-color: lightgrey;
+  box-sizing: border-box;
+}
+@media (max-width: 992px) {
+  body #form {
+    grid: auto-flow/1fr;
+  }
+}
+body #form .form-field {
+  display: flex;
+  flex-direction: column;
+  width: 350px;
+}
+body #form .form-field .label {
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+body #form .form-field .label:after {
+  content: " *";
+  color: red;
+}
+body #form .form-field .input-field {
+  height: 1.8rem;
+  border-radius: 5px;
+}
+body #form .form-field .input-field:user-invalid {
+  border: 1px dashed red;
+}
+body #form .form-field .input-field:invalid {
+  background-color: bisque;
+}
+body #form .form-field .message {
+  font-size: 0.9em;
+  font-weight: lighter;
+  visibility: visible;
+}
+body #form .form-field .message.error {
+  color: red;
+}
+body #form .form-field .message.error:after {
+  content: " : non";
+}
+body #form .form-field .message.hidden {
+  visibility: hidden;
+}
+body #form #submit-btn {
+  height: fit-content;
+  width: fit-content;
+  padding: 10px;
+  border: 1px solid grey;
+  border-radius: 5px;
+  background-color: yellow;
+  font-weight: bolder;
+}
+
+/*# sourceMappingURL=form.css.map */

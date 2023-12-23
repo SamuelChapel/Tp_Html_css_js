@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Examen</title>
+    <link rel="stylesheet" href="./css/form.css" />
+    <script src="./js/form.js" defer></script>
+</head>
+
+<body>
+    <form id="form">
+        <div class="form-field">
+            <label for="email-input" class="label">Email</label>
+            <input type="email" id="email-input" class="input-field" required/>
+            <label for="email-input" class="message">Votre email vous servira d'identifiant</label>
+        </div>
+
+        <div class="form-field">
+            <label for="email-confirmation-input" class="label">Confirmation de l'email</label>
+            <input type="email" id="email-confirmation-input" class="input-field" required/>
+            <label for="email-confirmation-input" class="message" id="email-confirmation-message">Concordance des emails</label>
+        </div>
+
+        <div class="form-field">
+            <label for="password-input" class="label">Mot de passe</label>
+            <input
+                    type="password"
+                    id="password-input"
+                    class="input-field"
+                    pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{12,}$"
+                    minlength=12
+                    required/>
+        </div>
+
+        <div class="form-field">
+            <label for="password-confirmation-input" class="label">Confirmation du mot de passe</label>
+            <input
+                    type="password"
+                    id="password-confirmation-input"
+                    class="input-field"
+                    pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{12,}$"
+                    required/>
+            <label for="password-confirmation-input" class="message" id="password-confirmation-message">Concordance des mots de passe</label>
+        </div>
+
+        <input type="submit" id="submit-btn"/>
+    </form>
+</body>
+</html>
