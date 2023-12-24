@@ -9,36 +9,38 @@
 
 <body>
     <form id="form">
-        <div class="form-field">
+        <div class="form-field" id="form-field-email">
             <label for="email-input" class="label">Email</label>
             <input type="email" id="email-input" class="input-field" required/>
             <label for="email-input" class="message">Votre email vous servira d'identifiant</label>
         </div>
 
-        <div class="form-field">
+        <div class="form-field" id="form-field-email-confirmation">
             <label for="email-confirmation-input" class="label">Confirmation de l'email</label>
             <input type="email" id="email-confirmation-input" class="input-field" required/>
             <label for="email-confirmation-input" class="message" id="email-confirmation-message">Concordance des emails</label>
         </div>
 
-        <div class="form-field">
+        <div class="form-field" id="form-field-password">
             <label for="password-input" class="label">Mot de passe</label>
             <input
                     type="password"
                     id="password-input"
                     class="input-field"
-                    pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{12,}$"
+                    pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&_])[A-Za-z\d@$!%*?&]{12,}$"
                     minlength=12
                     required/>
+            <label for="password-input" class="message hidden" id="password-message"></label>
         </div>
 
-        <div class="form-field">
+        <div class="form-field" id="form-field-password-confirmation">
             <label for="password-confirmation-input" class="label">Confirmation du mot de passe</label>
             <input
                     type="password"
                     id="password-confirmation-input"
                     class="input-field"
-                    pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{12,}$"
+                    pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&_])[A-Za-z\d@$!%*?&]{12,}$"
+                    minlength=12
                     required/>
             <label for="password-confirmation-input" class="message" id="password-confirmation-message">Concordance des mots de passe</label>
         </div>

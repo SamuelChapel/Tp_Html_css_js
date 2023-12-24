@@ -1,11 +1,19 @@
-const form = document.querySelector("#form");
 const emailInput = document.querySelector("#email-input");
 const emailConfirmInput = document.querySelector("#email-confirmation-input");
 const passwordInput = document.querySelector("#password-input");
 const passwordConfirmInput = document.querySelector("#password-confirmation-input");
-const submitButton = document.querySelector("#submit-btn");
 
-console.log(form, emailInput, emailConfirmInput, passwordInput, passwordConfirmInput, submitButton);
+function createMarkup(markupName, text, parent, attributes = []) {
+    const markup = document.createElement(markupName);
+    markup.textContent = text;
+    parent.appendChild(markup);
+    for (const attribute of attributes) {
+        for (let key in attribute) {
+            markup.setAttribute(key, attribute[key]);
+        }
+    }
+    return markup;
+}
 
 const verifyMatchingEmails = () => {
     if(emailInput.value !== emailConfirmInput.value) {
@@ -28,7 +36,30 @@ const verifyMatchingPasswords = () => {
 }
 
 const verifyPasswordValidity = () => {
-    passwordInput.value;
+    const formFieldPassword = document.querySelector("#form-field-password");
+
+    document.querySelectorAll('#form-field-password .message.error')
+            .forEach(l => l.remove());
+
+    if (passwordInput.value.length < 12) {
+        createMarkup("label", "au moins 12 caractères", formFieldPassword, [{class: 'message error'}])
+    }
+
+    if (!passwordInput.value?.match(/[A-Z]/) || !passwordInput.value?.match(/[a-z]/)) {
+        createMarkup("label", "au moins une minuscule et une majuscule", formFieldPassword, [{class: 'message error'}])
+    }
+
+    if (!passwordInput.value?.match(/[a-zA-Z]/)) {
+        createMarkup("label", "au moins une lettre", formFieldPassword, [{class: 'message error'}])
+    }
+
+    if (!passwordInput.value?.match(/\d/)) {
+        createMarkup("label", "au moins un chiffre", formFieldPassword, [{class: 'message error'}])
+    }
+
+    if (!passwordInput.value?.match(/[@$!%*?&_]/)) {
+        createMarkup("label", "au moins un caractère spécial", formFieldPassword, [{class: 'message error'}])
+    }
 }
 
 passwordInput.addEventListener("input", verifyMatchingPasswords);
