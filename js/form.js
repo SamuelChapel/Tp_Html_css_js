@@ -57,7 +57,7 @@ const verifyPasswordValidity = () => {
         createMarkup("label", "au moins un chiffre", formFieldPassword, [{class: 'message error'}])
     }
 
-    if (!passwordInput.value?.match(/[@$!%*?&_]/)) {
+    if (!passwordInput.value?.match(/[@$!%*?&]/)) {
         createMarkup("label", "au moins un caractère spécial", formFieldPassword, [{class: 'message error'}])
     }
 }
