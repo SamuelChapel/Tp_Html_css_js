@@ -6,10 +6,10 @@ body {
     margin-left: auto;
     margin-right: auto;
 
-    padding: 20px 20px 0;
+    padding: 20px;
 
     display: grid;
-    grid: repeat(3, 1fr) / repeat(2, 1fr);
+    grid: repeat(3, auto) / repeat(2, 1fr);
     gap: 30px;
 
     background-color: lightgrey;
@@ -24,7 +24,6 @@ body {
       display: flex;
       flex-direction: column;
 
-      //min-height: 153px;
       width: 350px;
 
       .label {
@@ -45,10 +44,6 @@ body {
 
         &:user-invalid {
           border: 1px dashed red;
-        }
-
-        &:invalid {
-          background-color: bisque;
         }
       }
 

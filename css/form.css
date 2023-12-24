@@ -5,9 +5,9 @@ body #form {
   width: 80%;
   margin-left: auto;
   margin-right: auto;
-  padding: 20px 20px 0;
+  padding: 20px;
   display: grid;
-  grid: repeat(3, 1fr)/repeat(2, 1fr);
+  grid: repeat(3, auto)/repeat(2, 1fr);
   gap: 30px;
   background-color: lightgrey;
   box-sizing: border-box;
@@ -36,9 +36,6 @@ body #form .form-field .input-field {
 }
 body #form .form-field .input-field:user-invalid {
   border: 1px dashed red;
-}
-body #form .form-field .input-field:invalid {
-  background-color: bisque;
 }
 body #form .form-field .message {
   font-size: 0.9em;
